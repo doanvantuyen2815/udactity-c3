@@ -19,6 +19,6 @@ jobs:
     - name: tag the Docker image
       run: docker tag udagram-api-feed doanvantuyen1910/udagram-api-feed:v1
     - name: push the Docker image
-      run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login hub.docker.com -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login hub.docker.com -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     - name: push the Docker image
       run: docker push doanvantuyen1910/udagram-api-feed:v1
