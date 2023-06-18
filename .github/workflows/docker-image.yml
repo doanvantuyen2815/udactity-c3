@@ -20,6 +20,7 @@ jobs:
       run: docker tag udagram-api-feed doanvantuyen1910/udagram-api-feed:v1
     -
         name: Login to Docker Hub
+        uses: ./
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
