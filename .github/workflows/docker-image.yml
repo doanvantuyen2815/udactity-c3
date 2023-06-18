@@ -16,8 +16,20 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build -t udagram-api-feed ./udagram-api-feed
+    - name: Build the Docker image
+      run: docker build -t udagram-api-user ./udagram-api-user
+    - name: Build the Docker image
+      run: docker build -t udagram-frontend ./udagram-frontend
+    - name: Build the Docker image
+      run: docker build -t udagram-reverseproxy ./udagram-reverseproxy
     - name: tag the Docker image
       run: docker tag udagram-api-feed doanvantuyen1910/udagram-api-feed:v1
+    - name: tag the Docker image
+      run: docker tag udagram-api-user doanvantuyen1910/udagram-api-user:v1
+    - name: tag the Docker image
+      run: docker tag udagram-frontend doanvantuyen1910/udagram-frontend:v1
+    - name: tag the Docker image
+      run: docker tag udagram-reverseproxy doanvantuyen1910/udagram-reverseproxy:v1
     -
         name: Login to Docker Hub
         uses: docker/login-action@v2
@@ -28,3 +40,9 @@ jobs:
       run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
     - name: push the Docker image
       run: docker push doanvantuyen1910/udagram-api-feed:v1
+    - name: push the Docker image
+      run: docker push doanvantuyen1910/udagram-api-user:v1
+    - name: push the Docker image
+      run: docker push doanvantuyen1910/udagram-frontend:v1
+    - name: push the Docker image
+      run: docker push doanvantuyen1910/udagram-reverseproxy:v1
