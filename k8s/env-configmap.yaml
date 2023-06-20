@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  AWS_BUCKET: arn:aws:s3:::udacity-c3-tuyen
+  AWS_PROFILE: default
+  AWS_REGION: us-east-1
+  POSTGRES_HOST: cdr.clidcinjduj5.us-east-1.rds.amazonaws.com
+  POSTGRES_DATABASE: udacity
+  POSTGRES_PASSWORD: postgres
+  POSTGRES_USERNAME: postgres
+  URL: http://localhost:8100
+  JWT_SECRET: testing
+  NODE_OPTIONS: --max-old-space-size=1024
+metadata:
+  name: env-config
+  
